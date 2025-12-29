@@ -5,6 +5,15 @@ type SupabaseProductInsert =
   Database["public"]["Tables"]["treez-product"]["Insert"];
 
 /**
+ * Converts a number to an integer, rounding if necessary.
+ * Returns null if the value is null or undefined.
+ */
+function toInteger(value: number | null | undefined): number | null {
+  if (value === null || value === undefined) return null;
+  return Math.round(value);
+}
+
+/**
  * Transforms a TreezProduct from the Treez API to a Supabase treez-product format
  */
 export function transformTreezProductToSupabase(
@@ -21,7 +30,7 @@ export function transformTreezProductToSupabase(
     total_mg_thc: product.product_configurable_fields.total_mg_thc || null,
     total_mg_cbd: product.product_configurable_fields.total_mg_cbd || null,
     subtype: product.product_configurable_fields.subtype || null,
-    doses: product.product_configurable_fields.doses || null,
+    doses: toInteger(product.product_configurable_fields.doses),
     mg_per_dose: product.product_configurable_fields.mg_per_dose || null,
     total_flower_weight_g:
       product.product_configurable_fields.total_flower_weight_g || null,
@@ -39,10 +48,11 @@ export function transformTreezProductToSupabase(
       product.attributes.effects.length > 0 ? product.attributes.effects : null,
     image_url: product.e_commerce.primary_image || null,
     description: product.e_commerce.product_description || null,
-    minimum_visible_inventory_level:
-      product.e_commerce.minimum_visible_inventory_level || null,
+    minimum_visible_inventory_level: toInteger(
+      product.e_commerce.minimum_visible_inventory_level
+    ),
     hide_from_menu: product.e_commerce.hide_from_menu,
-    sellable_quantity: product.sellable_quantity,
+    sellable_quantity: toInteger(product.sellable_quantity) ?? 0,
     category_type: product.category_type || null,
     slug: product.slug,
     product_status: product.product_status || null,
