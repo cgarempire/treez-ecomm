@@ -1,5 +1,5 @@
+import { getMostRecentTreezAccessToken } from "@/lib/supabase/queries/get-token";
 import { toSearchParams } from "@/lib/utils";
-import { getTreezAccessToken } from "../token/get-token";
 import { TreezProduct, TreezProductsResponse } from "./type";
 
 type TreezProductsFilters = {
@@ -47,7 +47,7 @@ export async function getTreezProducts(
     page,
     per_page: perPage,
   });
-  const accessToken = await getTreezAccessToken();
+  const accessToken = await getMostRecentTreezAccessToken();
   const response = await fetch(
     `https://api.treez.io/v2.0/dispensary/${TREEZ_DISPENSARY}/product/product_list?${searchParams.toString()}`,
     {
