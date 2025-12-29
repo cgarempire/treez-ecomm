@@ -42,7 +42,7 @@ export function transformTreezProductToSupabase(
     price_sell: product.pricing.price_sell || null,
     discounted_price: product.pricing.discounted_price || null,
     discount_amount: product.pricing.discount_amount || null,
-    discount_percent: product.pricing.discount_percent || null,
+    discount_percent: toInteger(product.pricing.discount_percent),
     general:
       product.attributes.general.length > 0 ? product.attributes.general : null,
     flavors:
