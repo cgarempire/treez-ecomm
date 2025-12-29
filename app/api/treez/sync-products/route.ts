@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
     const { error } = await supabase
       .from("treez-product")
       .upsert(supabaseProducts, {
-        onConflict: "treez_id",
+        onConflict: "slug",
       });
 
     if (error) {
