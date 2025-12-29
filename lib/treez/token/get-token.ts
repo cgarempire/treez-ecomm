@@ -41,5 +41,5 @@ export async function getTreezAccessToken() {
   }
 
   const data: TreezAccessTokenResponse = await response.json();
-  return data;
+  return data.access_token;
 }

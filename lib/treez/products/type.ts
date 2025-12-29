@@ -86,8 +86,8 @@ export interface TreezProductsResponse {
   resultReason: string | null;
   resultDetail: string | null;
   data: {
-    page_count: number;
-    total_count: number;
+    page_count: number; // number of products on the current page
+    total_count: number; // total number of products
     product_list: TreezProduct[];
   } | null;
 }

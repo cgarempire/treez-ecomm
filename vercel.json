@@ -3,6 +3,10 @@
     {
       "path": "/api/treez/access-token",
       "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/treez/sync-products",
+      "schedule": "*/1 * * * *"
     }
   ]
 }

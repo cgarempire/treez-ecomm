@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
   // Save the access token to the database
   const supabase = createServiceClient();
   const { error } = await supabase.from("treez-auth-code").insert({
-    code: accessToken.access_token,
+    code: accessToken,
   });
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

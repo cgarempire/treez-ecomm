@@ -57,6 +57,114 @@ export type Database = {
         }
         Relationships: []
       }
+      "treez-product": {
+        Row: {
+          above_threshold: boolean
+          amount: number | null
+          brand: string | null
+          category_type: string | null
+          classification: string | null
+          created_at: string
+          description: string | null
+          discount_amount: number | null
+          discount_percent: number | null
+          discounted_price: number | null
+          doses: number | null
+          effects: string[] | null
+          flavors: string[] | null
+          general: string[] | null
+          hide_from_menu: boolean
+          id: string
+          image_url: string | null
+          mg_per_dose: number | null
+          minimum_visible_inventory_level: number | null
+          name: string
+          price_sell: number | null
+          product_status: string | null
+          sellable_quantity: number
+          size: string | null
+          slug: string
+          subtype: string | null
+          total_concentrate_weight_g: number | null
+          total_flower_weight_g: number | null
+          total_mg_cbd: number | null
+          total_mg_thc: number | null
+          treez_id: string
+          treez_updated_at: string | null
+          updated_at: string
+        }
+        Insert: {
+          above_threshold: boolean
+          amount?: number | null
+          brand?: string | null
+          category_type?: string | null
+          classification?: string | null
+          created_at?: string
+          description?: string | null
+          discount_amount?: number | null
+          discount_percent?: number | null
+          discounted_price?: number | null
+          doses?: number | null
+          effects?: string[] | null
+          flavors?: string[] | null
+          general?: string[] | null
+          hide_from_menu: boolean
+          id?: string
+          image_url?: string | null
+          mg_per_dose?: number | null
+          minimum_visible_inventory_level?: number | null
+          name: string
+          price_sell?: number | null
+          product_status?: string | null
+          sellable_quantity: number
+          size?: string | null
+          slug: string
+          subtype?: string | null
+          total_concentrate_weight_g?: number | null
+          total_flower_weight_g?: number | null
+          total_mg_cbd?: number | null
+          total_mg_thc?: number | null
+          treez_id: string
+          treez_updated_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          above_threshold?: boolean
+          amount?: number | null
+          brand?: string | null
+          category_type?: string | null
+          classification?: string | null
+          created_at?: string
+          description?: string | null
+          discount_amount?: number | null
+          discount_percent?: number | null
+          discounted_price?: number | null
+          doses?: number | null
+          effects?: string[] | null
+          flavors?: string[] | null
+          general?: string[] | null
+          hide_from_menu?: boolean
+          id?: string
+          image_url?: string | null
+          mg_per_dose?: number | null
+          minimum_visible_inventory_level?: number | null
+          name?: string
+          price_sell?: number | null
+          product_status?: string | null
+          sellable_quantity?: number
+          size?: string | null
+          slug?: string
+          subtype?: string | null
+          total_concentrate_weight_g?: number | null
+          total_flower_weight_g?: number | null
+          total_mg_cbd?: number | null
+          total_mg_thc?: number | null
+          treez_id?: string
+          treez_updated_at?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
