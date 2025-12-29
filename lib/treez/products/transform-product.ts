@@ -5,12 +5,15 @@ type SupabaseProductInsert =
   Database["public"]["Tables"]["treez-product"]["Insert"];
 
 /**
- * Converts a number to an integer, rounding if necessary.
+ * Converts a number or string to an integer, rounding if necessary.
  * Returns null if the value is null or undefined.
+ * Handles both numeric and string inputs (e.g., "1.5" -> 2).
  */
-function toInteger(value: number | null | undefined): number | null {
+function toInteger(value: number | string | null | undefined): number | null {
   if (value === null || value === undefined) return null;
-  return Math.round(value);
+  const num = typeof value === "string" ? parseFloat(value) : value;
+  if (isNaN(num)) return null;
+  return Math.round(num);
 }
 
 /**
